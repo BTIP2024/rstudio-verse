@@ -35,4 +35,7 @@ RUN /rocker_scripts/install_pandoc.sh
 COPY scripts/install_quarto.sh /rocker_scripts/install_quarto.sh
 RUN /rocker_scripts/install_quarto.sh
 
+COPY scripts/install_tidyverse.sh /rocker_scripts/install_tidyverse.sh
+RUN /rocker_scripts/install_tidyverse.sh
+
 COPY scripts /rocker_scripts
