@@ -14,6 +14,9 @@ COPY scripts/bin/ /rocker_scripts/bin/
 COPY scripts/setup_R.sh /rocker_scripts/setup_R.sh
 RUN /rocker_scripts/setup_R.sh
 
+COPY scripts/install_tidyverse.sh /rocker_scripts/install_tidyverse.sh
+RUN /rocker_scripts/install_tidyverse.sh
+
 ENV S6_VERSION="v2.1.0.2"
 ENV RSTUDIO_VERSION="2024.04.2+764"
 ENV DEFAULT_USER="rstudio"
@@ -34,8 +37,5 @@ RUN /rocker_scripts/install_pandoc.sh
 
 COPY scripts/install_quarto.sh /rocker_scripts/install_quarto.sh
 RUN /rocker_scripts/install_quarto.sh
-
-COPY scripts/install_tidyverse.sh /rocker_scripts/install_tidyverse.sh
-RUN /rocker_scripts/install_tidyverse.sh
 
 COPY scripts /rocker_scripts
